@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crossfade Slideshow (Window Style)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ✅ Dynamic blurred background layer -->
+  <div class="background-blur" id="background-blur"></div>
+
+  <nav>
+    <a href="/">Home</a> |
+    <a href="/about">About</a> |
+    <a href="/gallery">Gallery</a> |
+    <a href="/contact">Contact</a>
+  </nav>
+  
+
+  <!-- ✅ Absolute layout wrapper to keep slideshow centered -->
+  <div class="gallery-wrapper">
+    
+    <!-- Sidebar pinned to left of the centered slideshow -->
+    <div class="sidebar">
+      <h3>Categories</h3>
+      <ul class="category-list">
+        <li>📷 Nature</li>
+        <li>🏙️ Urban</li>
+        <li>🛶 Lakes</li>
+        <li>🧭 Adventure</li>
+        <li>🖼️ Artistic</li>
+      </ul>
+    </div>
+
+    <!-- Slideshow is truly centered -->
+    <div class="slideshow-layout">
+      <div class="image-window">
+        <img id="img1" class="active" src="/img/album/IMG_3483-2.jpg" alt="Slideshow Image" />
+        <img id="img2" src="" alt="" />
+      </div>
+      <div class="caption" id="caption">Artistic Code Warrior</div>
+      <div class="nav-buttons">
+        <button id="prevBtn">◀ Prev</button>
+        <button id="nextBtn">Next ▶</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const images = [
+      {
+        src: "/img/album/IMG_3483-2.jpg",
+        caption: "Artistic Code Warrior",
+        series: "Artistic"
+      },
+      {
+        src: "/img/album/Yosemite_Lake-3.jpeg",
+        caption: "Yosemite Lake",
+        series: "Lakes"
+      }
+    ];
+
+    let index = 0;
+    let showingImg1 = true;
+    const img1 = document.getElementById("img1");
+    const img2 = document.getElementById("img2");
+    const caption = document.getElementById("caption");
+    const background = document.getElementById("background-blur");
+
+    function updateBackground(src) {
+      background.style.opacity = 0;
+      setTimeout(() => {
+        background.style.backgroundImage = `url('${src}')`;
+        background.style.opacity = 1;
+      }, 300);
+    }
+
+    function crossfade(direction = 1) {
+      const current = showingImg1 ? img1 : img2;
+      const next = showingImg1 ? img2 : img1;
+
+      index = (index + direction + images.length) % images.length;
+      next.src = images[index].src;
+      caption.textContent = images[index].caption;
+
+      next.classList.add("active");
+      current.classList.remove("active");
+
+      updateBackground(images[index].src);
+      showingImg1 = !showingImg1;
+    }
+
+    document.getElementById("nextBtn").addEventListener("click", () => crossfade(1));
+    document.getElementById("prevBtn").addEventListener("click", () => crossfade(-1));
+
+    window.addEventListener("DOMContentLoaded", () => {
+      updateBackground(images[0].src);
+    });
+
+    setInterval(() => crossfade(1), 4000);
+  </script>
+</body>
+</html>
