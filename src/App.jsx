@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // Component imports
 import Navbar from './components/Navbar';
-import About from './components/About';
-import Contact from './components/Contact';
-import Gallery from './components/Gallery';
+import About from '../src/components/About';
+import Contact from '../src/components/Contact';
+import Gallery from '../src/components/Gallery';
 
 // Page imports
 import Home from './pages/Home';
