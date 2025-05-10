@@ -1,3 +1,6 @@
+<!-- markdownlint-disable -->
+
+
 # Redirect www to non-www
 https://www.artisticcodewarrior.com/* https://artisticcodewarrior.com/:splat 301!
 
