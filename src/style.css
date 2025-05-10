@@ -113,9 +113,9 @@ nav a {
 /* Caption below image */
 .caption {
   position: absolute;
-  bottom:175px;
-  left: auto;
-  width: 49.6%;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   font-style: italic;
   background: rgba(0, 0, 0, 0.6);
   padding: 8px;
@@ -126,6 +126,7 @@ nav a {
   font-size: 1rem;
   z-index: 2;
 }
+
 
 
 /* Nav buttons */
