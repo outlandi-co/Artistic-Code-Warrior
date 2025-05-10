@@ -8,11 +8,7 @@ export default function About() {
       <div className="background-blur" id="background-blur"></div>
 
       {/* ✅ Router-friendly Navigation */}
-      <nav>
-        <Link to="/about">About</Link> |{' '}
-        <Link to="/gallery">Gallery</Link> |{' '}
-        <Link to="/contact">Contact</Link>
-      </nav>
+      
 
       <div className="gallery-wrapper" id="about">
         <div className="slideshow-layout">

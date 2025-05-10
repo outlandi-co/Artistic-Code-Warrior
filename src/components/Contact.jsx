@@ -8,11 +8,7 @@ export default function Contact() {
       <div className="background-blur" id="background-blur"></div>
 
       {/* ✅ Router navigation */}
-      <nav>
-        <Link to="/about">About</Link> |{' '}
-        <Link to="/gallery">Gallery</Link> |{' '}
-        <Link to="/contact">Contact</Link>
-      </nav>
+      
 
       <div className="gallery-wrapper" id="contact">
         <div className="slideshow-layout">

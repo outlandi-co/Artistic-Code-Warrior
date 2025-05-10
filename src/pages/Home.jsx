@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Navbar from '../components/Navbar.jsx'; // ✅ Import the reusable nav
 import '../style.css';
 
 export default function Home() {
@@ -12,8 +11,7 @@ export default function Home() {
         Your browser does not support the video tag.
       </video>
 
-      {/* ✅ Shared Navbar */}
-      <Navbar />
+      {/* ✅ No Navbar here – handled globally in App.jsx */}
 
       {/* Hero Section */}
       <div className="hero-content">
