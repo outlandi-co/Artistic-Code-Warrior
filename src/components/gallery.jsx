@@ -8,11 +8,15 @@ const images = [
     caption: 'Artistic Code Warrior',
   },
   {
-    src: '/Album/Yosemite_Lake-3.jpg',
+    src: '/Album/IMG_13_1_2.jpg',
     caption: 'Yosemite Lake',
   },
   {
-    src: '/Album/Yosemite_Lake-2.jpg',
+    src: '/Album/IMG_13_1_3.jpg',
+    caption: 'Yosemite Lake',
+  },
+  {
+    src: '/Album/IMG_13_1_1.jpg',
     caption: 'Serene Reflection',
   },
   {
