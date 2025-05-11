@@ -37,8 +37,9 @@ export default function Gallery() {
 
   return (
     <>
-      <div className="background-blur" id="background-blur"></div>
       <div className="gallery-wrapper">
+      <div className="background-blur" id="background-blur"></div>
+
         <div className="sidebar">
           <h3>Categories</h3>
           <ul className="category-list">
