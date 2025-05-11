@@ -1,93 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import '../style.css';
-
-const images = [
-  { src: '/Album/IMG_3115.jpg', caption: 'Artistic Code Warrior' },
-  { src: '/Album/IMG_13_1_1.jpg', caption: 'Yosemite Lake' },
-  { src: '/Album/IMG_13_1_3.jpg', caption: 'Yosemite Lake' },
-  { src: '/Album/IMG_13_1_1.jpg', caption: 'Serene Reflection' },
-  { src: '/Album/Yosemite_Lake.jpg', caption: 'Still Waters' },
-  { src: '/Album/IMG_3119-Enhanced-NR.jpg', caption: 'Bridge in Focus' },
-];
-
 export default function Gallery() {
-  const [index, setIndex] = useState(0);
-  const [fadeIn, setFadeIn] = useState(true);
-
-  useEffect(() => {
-    const background = document.getElementById('background-blur');
-    if (background) {
-      background.style.opacity = 0;
-      setTimeout(() => {
-        background.style.backgroundImage = `url('${images[index].src}')`;
-        background.style.opacity = 1;
-      }, 300);
-    }
-
-    const interval = setInterval(() => {
-      setFadeIn(false);
-      setTimeout(() => {
-        setIndex((prev) => (prev + 1) % images.length);
-        setFadeIn(true);
-      }, 200);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, [index]);
-
-  const nextImage = () => {
-    setFadeIn(false);
-    setTimeout(() => {
-      setIndex((prev) => (prev + 1) % images.length);
-      setFadeIn(true);
-    }, 200);
-  };
-
-  const prevImage = () => {
-    setFadeIn(false);
-    setTimeout(() => {
-      setIndex((prev) => (prev - 1 + images.length) % images.length);
-      setFadeIn(true);
-    }, 200);
-  };
-
   return (
-    <>
-      <div className="background-blur" id="background-blur"></div>
-      <div className="gallery-wrapper">
-        <div className="sidebar">
-          <h3>Categories</h3>
-          <ul className="category-list">
-            <li>📷 Nature</li>
-            <li>🏙️ Urban</li>
-            <li>🛶 Lakes</li>
-            <li>🧭 Adventure</li>
-            <li>🖼️ Artistic</li>
-          </ul>
-        </div>
-
-        <div className="slideshow-layout">
-          <div className="image-window">
-            {images.map((img, i) => (
-              <img
-                key={img.src}
-                src={img.src}
-                alt={img.caption}
-                className={i === index && fadeIn ? 'active' : 'inactive'}
-                onError={() => console.error(`❌ Failed to load: ${img.src}`)}
-              />
-            ))}
-            <div className="caption">{images[index].caption}</div>
-          </div>
-
-          <div className="controls">
-            <div className="nav-buttons">
-              <button onClick={prevImage}>◀ Prev</button>
-              <button onClick={nextImage}>Next ▶</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
+    <div style={{ padding: 20, background: 'black', color: 'white' }}>
+      <h2>Mobile Image Test</h2>
+      <img
+        src="/Album/IMG_3115.jpg"
+        alt="Test"
+        style={{ width: '100%', maxWidth: 400, border: '2px solid white' }}
+        onError={() => console.error('❌ Image failed to load')}
+      />
+    </div>
   );
 }
