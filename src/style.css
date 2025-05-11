@@ -6,6 +6,7 @@ body {
   font-family: Arial, sans-serif;
   color: white;
   overflow-x: hidden;
+  overflow-y: hidden; /* prevent vertical scroll */
 }
 
 nav {
@@ -33,19 +34,18 @@ nav a {
   opacity: 1;
 }
 
-/* Layout wrapper */
 .gallery-wrapper {
   position: relative;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0 20px;
   flex-wrap: wrap;
   box-sizing: border-box;
+  overflow: hidden; /* ⬅️ prevent content spill */
 }
 
-/* Slideshow layout */
 .slideshow-layout {
   max-width: 700px;
   width: 100%;
@@ -53,7 +53,6 @@ nav a {
   z-index: 1;
 }
 
-/* Sidebar aligned left */
 .sidebar {
   position: absolute;
   left: calc(50% - 700px / 2 - 220px);
@@ -80,7 +79,6 @@ nav a {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Slideshow window */
 .image-window {
   position: relative;
   width: 100%;
@@ -110,7 +108,6 @@ nav a {
   z-index: 2;
 }
 
-/* Caption */
 .caption {
   position: relative;
   width: 100%;
@@ -124,7 +121,6 @@ nav a {
   z-index: 2;
 }
 
-/* Nav buttons */
 .nav-buttons {
   margin-top: 10px;
 }
@@ -141,10 +137,16 @@ nav a {
 
 /* Mobile-friendly layout */
 @media (max-width: 900px) {
+  html, body {
+    height: 100vh;
+    overflow: hidden;
+  }
+
   .gallery-wrapper {
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    padding: 0;
+    height: 100vh;
   }
 
   .sidebar {
@@ -153,12 +155,13 @@ nav a {
 
   .slideshow-layout {
     max-width: 100%;
+    height: 100%;
   }
 
   .image-window {
     width: 100%;
+    height: 100%;
     aspect-ratio: auto;
-    height: auto;
     background: transparent;
     display: flex;
     justify-content: center;
@@ -169,14 +172,14 @@ nav a {
     position: relative;
     width: 100%;
     height: auto;
+    max-height: 100%;
     object-fit: contain;
-    top: 0;
-    left: 0;
   }
 
   .caption {
     font-size: 0.9rem;
     position: relative;
+    margin-top: 8px;
     bottom: unset;
   }
 }
