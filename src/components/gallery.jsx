@@ -3,30 +3,12 @@ import '../style.css';
 import Navbar from './Navbar.jsx';
 
 const images = [
-  {
-    src: '/Album/IMG_3115.jpg',
-    caption: 'Artistic Code Warrior',
-  },
-  {
-    src: '/Album/IMG_13_1_2.jpg',
-    caption: 'Yosemite Lake',
-  },
-  {
-    src: '/Album/IMG_13_1_3.jpg',
-    caption: 'Yosemite Lake',
-  },
-  {
-    src: '/Album/IMG_13_1_1.jpg',
-    caption: 'Serene Reflection',
-  },
-  {
-    src: '/Album/Yosemite_Lake.jpg',
-    caption: 'Still Waters',
-  },
-  {
-    src: '/Album/IMG_3119-Enhanced-NR.jpg',
-    caption: 'Bridge in Focus',
-  },
+  { src: '/Album/IMG_3115.jpg', caption: 'Artistic Code Warrior' },
+  { src: '/Album/IMG_13_1_2.jpg', caption: 'Yosemite Lake' },
+  { src: '/Album/IMG_13_1_3.jpg', caption: 'Yosemite Lake' },
+  { src: '/Album/IMG_13_1_1.jpg', caption: 'Serene Reflection' },
+  { src: '/Album/Yosemite_Lake.jpg', caption: 'Still Waters' },
+  { src: '/Album/IMG_3119-Enhanced-NR.jpg', caption: 'Bridge in Focus' },
 ];
 
 export default function Gallery() {
@@ -72,6 +54,7 @@ export default function Gallery() {
 
   return (
     <>
+      <Navbar />
       <div className="background-blur" id="background-blur"></div>
       <div className="gallery-wrapper">
         <div className="sidebar">
@@ -91,7 +74,7 @@ export default function Gallery() {
                 key={img.src}
                 src={img.src}
                 alt={img.caption}
-                className={i === index && fadeIn ? 'active' : ''}
+                className={i === index ? 'active' : 'inactive'}
               />
             ))}
           </div>
