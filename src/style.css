@@ -10,6 +10,30 @@ body, html {
   overflow-y: auto;
 }
 
+/* Navbar styles */
+nav {
+  text-align: center;
+  margin: 20px 0;
+}
+
+nav a {
+  color: #00cdd3;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+a:link,
+a:visited {
+  color: #00cdd3;
+  text-decoration: none;
+}
+
 /* Wrapper layout */
 .gallery-wrapper {
   min-height: 100vh;
@@ -41,7 +65,7 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 405px; /* Ensures visual consistency */
+  min-height: 405px;
 }
 
 /* Image styles */
