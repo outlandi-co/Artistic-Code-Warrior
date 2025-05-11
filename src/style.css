@@ -25,10 +25,15 @@ nav a {
   left: 0;
   right: 0;
   bottom: 0;
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.4)
+    ),
+    url('/Album/IMG_3115.jpg'); /* fallback image */
   background-size: cover;
   background-position: center;
   filter: blur(30px) brightness(0.5);
-  z-index: -1; /* ✅ REVERTED to prevent mobile black screen */
+  z-index: -1;
   transition: background-image 0s, opacity 0.8s ease-in-out;
   opacity: 1;
 }
@@ -38,7 +43,7 @@ nav a {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* ✅ Better for mobile than calc(100vh - 80px) */
+  min-height: 100vh;
   padding: 0 20px;
   position: relative;
   z-index: 1;

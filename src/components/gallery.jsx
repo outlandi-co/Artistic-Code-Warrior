@@ -14,6 +14,16 @@ export default function Gallery() {
   const [index, setIndex] = useState(0);
   const [fadeIn, setFadeIn] = useState(true);
 
+  // Set initial background on mount
+  useEffect(() => {
+    const background = document.getElementById('background-blur');
+    if (background) {
+      background.style.backgroundImage = `url('${images[0].src}')`;
+      background.style.opacity = 1;
+    }
+  }, []);
+
+  // Update background on image index change
   useEffect(() => {
     const background = document.getElementById('background-blur');
     if (background) {
@@ -21,6 +31,7 @@ export default function Gallery() {
       setTimeout(() => {
         background.style.backgroundImage = `url('${images[index].src}')`;
         background.style.opacity = 1;
+        console.log('Background set to:', images[index].src);
       }, 300);
     }
 
@@ -53,7 +64,6 @@ export default function Gallery() {
 
   return (
     <>
-     
       <div className="background-blur" id="background-blur"></div>
       <div className="gallery-wrapper">
         <div className="sidebar">
