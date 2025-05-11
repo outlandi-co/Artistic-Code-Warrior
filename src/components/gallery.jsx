@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import '../style.css';
-import Navbar from './Navbar.jsx';
 
 const images = [
   {
@@ -72,7 +71,6 @@ export default function Gallery() {
 
   return (
     <>
-      <Navbar />
       <div className="background-blur" id="background-blur"></div>
       <div className="gallery-wrapper">
         <div className="sidebar">
