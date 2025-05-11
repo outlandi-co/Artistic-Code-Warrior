@@ -5,7 +5,7 @@ body {
   background: black;
   font-family: Arial, sans-serif;
   color: white;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 nav {
@@ -84,15 +84,14 @@ nav a {
 .image-window {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
   overflow: hidden;
-  background: #000;
+  background: transparent;
   border-radius: 12px;
 }
 
 .image-window img {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
   opacity: 0;
   transition: opacity 1s ease-in-out;
@@ -104,20 +103,18 @@ nav a {
 
 .image-window img.active {
   opacity: 1;
+  position: relative;
   z-index: 2;
 }
 
 /* Caption */
 .caption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  position: relative;
   width: 100%;
   font-style: italic;
   background: rgba(0, 0, 0, 0.6);
   padding: 8px;
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
+  border-radius: 0 0 12px 12px;
   text-align: center;
   color: white;
   font-size: 1rem;
@@ -148,11 +145,7 @@ nav a {
   }
 
   .sidebar {
-    position: relative;
-    width: 100%;
-    margin-bottom: 20px;
-    left: 0;
-    text-align: center;
+    display: none;
   }
 
   .slideshow-layout {
@@ -161,22 +154,18 @@ nav a {
 
   .image-window {
     width: 100%;
-    aspect-ratio: auto;
     height: auto;
-    background: none;
+    background: transparent;
   }
 
   .image-window img {
     position: relative;
+    width: 100%;
     height: auto;
     object-fit: contain;
   }
 
   .caption {
-    position: relative;
-    width: 100%;
     font-size: 0.9rem;
-    border-radius: 0 0 12px 12px;
-    bottom: unset;
   }
 }
