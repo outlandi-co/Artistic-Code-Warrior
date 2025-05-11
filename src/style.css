@@ -149,12 +149,25 @@ nav a {
 @media (max-width: 900px) {
   .gallery-wrapper {
     padding: 10px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .slideshow-layout {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
   }
 
   .image-window {
     aspect-ratio: auto;
     height: auto;
     min-height: 300px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black; /* ✅ fallback color */
   }
 
   .image-window img {
@@ -163,9 +176,30 @@ nav a {
     inset: unset;
     width: 100%;
     height: auto;
+    display: none;
+  }
+
+  .image-window img.active {
+    display: block; /* ✅ ensures visibility */
   }
 
   .caption {
     font-size: 0.9rem;
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    padding: 10px;
+    color: white;
+  }
+
+  .nav-buttons {
+    margin-top: 20px;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .nav-buttons button {
+    width: 80%;
   }
 }
