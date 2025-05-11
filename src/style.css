@@ -51,6 +51,8 @@ nav a {
   max-width: 720px;
   width: 100%;
   text-align: center;
+  position: relative;
+  z-index: 2; /* ✅ ensures slideshow sits above blurred background */
 }
 
 /* Sidebar hidden on mobile */
@@ -105,15 +107,18 @@ nav a {
   padding: 8px;
 }
 
-/* Navigation buttons */
+/* ✅ Navigation buttons */
 .nav-buttons {
   margin-top: 12px;
+  z-index: 3;
+  position: relative;
 }
 
 .nav-buttons button {
-  background-color: #00cdd3;
+  background-color: rgba(0, 205, 211, 0.9); /* more visible on bright backgrounds */
   color: black;
   border: none;
+  font-weight: bold;
   padding: 10px 20px;
   margin: 0 8px;
   border-radius: 5px;
