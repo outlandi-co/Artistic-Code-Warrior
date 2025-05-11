@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 import '../style.css';
 
 const images = [
-  { src: '/Album/IMG_3115.jpg', caption: 'Artistic Code Warrior' },
-  { src: '/Album/IMG_13_1_2.jpg', caption: 'Yosemite Lake' },
-  { src: '/Album/IMG_13_1_3.jpg', caption: 'Yosemite Lake' },
-  { src: '/Album/IMG_13_1_1.jpg', caption: 'Serene Reflection' },
-  { src: '/Album/Yosemite_Lake.jpg', caption: 'Still Waters' },
-  { src: '/Album/IMG_3119-Enhanced-NR.jpg', caption: 'Bridge in Focus' },
+  { src: process.env.PUBLIC_URL + '/Album/IMG_3115.jpg', caption: 'Artistic Code Warrior' },
+  { src: process.env.PUBLIC_URL + '/Album/IMG_13_1_2.jpg', caption: 'Yosemite Lake' },
+  { src: process.env.PUBLIC_URL + '/Album/IMG_13_1_3.jpg', caption: 'Yosemite Lake' },
+  { src: process.env.PUBLIC_URL + '/Album/IMG_13_1_1.jpg', caption: 'Serene Reflection' },
+  { src: process.env.PUBLIC_URL + '/Album/Yosemite_Lake.jpg', caption: 'Still Waters' },
+  { src: process.env.PUBLIC_URL + '/Album/IMG_3119-Enhanced-NR.jpg', caption: 'Bridge in Focus' },
 ];
 
 export default function Gallery() {
@@ -37,7 +37,8 @@ export default function Gallery() {
 
   return (
     <>
-      <div className="background-blur" id="background-blur"></div>
+      <div className="background-blur" id="background-blur" />
+
       <div className="gallery-wrapper">
         <div className="sidebar">
           <h3>Categories</h3>
@@ -49,6 +50,7 @@ export default function Gallery() {
             <li>🖼️ Artistic</li>
           </ul>
         </div>
+
         <div className="slideshow-layout">
           <div className="image-window">
             {images.map((img, i) => (
@@ -57,10 +59,12 @@ export default function Gallery() {
                 src={img.src}
                 alt={img.caption}
                 className={i === index ? 'active' : 'inactive'}
+                onError={() => console.error(`❌ Failed to load: ${img.src}`)}
               />
             ))}
             <div className="caption">{images[index].caption}</div>
           </div>
+
           <div className="nav-buttons">
             <button onClick={prevImage}>◀ Prev</button>
             <button onClick={nextImage}>Next ▶</button>
