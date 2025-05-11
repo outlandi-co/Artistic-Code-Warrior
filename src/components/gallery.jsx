@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import '../style.css'; // Make sure this file is imported properly
+import React, { useState, useEffect } from 'react';
+import '../style.css';
 
 const images = [
   { src: '/Album/IMG_3115.jpg', caption: 'Artistic Code Warrior' },
@@ -11,6 +11,15 @@ const images = [
 
 export default function Gallery() {
   const [index, setIndex] = useState(0);
+
+  // Auto-loop every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex(prev => (prev + 1) % images.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [index]);
 
   const nextImage = () => setIndex((prev) => (prev + 1) % images.length);
   const prevImage = () => setIndex((prev) => (prev - 1 + images.length) % images.length);
