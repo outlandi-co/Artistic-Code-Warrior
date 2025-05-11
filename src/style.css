@@ -48,6 +48,7 @@ nav a {
   align-items: center;
   padding: 0 20px;
   overflow: hidden;
+  flex-direction: column;
 }
 
 /* Slideshow layout */
@@ -57,15 +58,6 @@ nav a {
   text-align: center;
   position: relative;
   z-index: 2;
-}
-
-/* Caption & buttons wrapper */
-.slideshow-controls {
-  max-width: 720px;
-  width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  padding: 10px 0;
 }
 
 /* Hide sidebar on mobile */
@@ -110,7 +102,7 @@ nav a {
   z-index: 0;
 }
 
-/* Caption */
+/* Caption inside image-window */
 .caption {
   position: absolute;
   bottom: 0;
@@ -127,11 +119,14 @@ nav a {
   color: white;
 }
 
-/* Buttons */
+/* Nav buttons below image */
 .nav-buttons {
-  margin-top: 16px;
+  margin-top: 24px;
   z-index: 5;
   position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
 }
 
 .nav-buttons button {
@@ -140,7 +135,6 @@ nav a {
   font-weight: bold;
   border: none;
   padding: 10px 20px;
-  margin: 0 10px;
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -153,14 +147,11 @@ nav a {
 /* Mobile tweaks */
 @media (max-width: 900px) {
   .gallery-wrapper {
-    flex-direction: column;
-    height: auto;
     padding: 10px;
   }
 
   .image-window {
-    width: 100%;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: auto;
     height: auto;
   }
 
@@ -170,9 +161,5 @@ nav a {
 
   .caption {
     font-size: 0.9rem;
-  }
-
-  .slideshow-controls {
-    padding: 0 12px;
   }
 }

@@ -59,8 +59,8 @@ export default function Gallery() {
                 className={i === index ? 'active' : 'inactive'}
               />
             ))}
+            <div className="caption">{images[index].caption}</div>
           </div>
-          <div className="caption">{images[index].caption}</div>
           <div className="nav-buttons">
             <button onClick={prevImage}>◀ Prev</button>
             <button onClick={nextImage}>Next ▶</button>
