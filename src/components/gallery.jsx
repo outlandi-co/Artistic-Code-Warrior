@@ -2,30 +2,12 @@ import React, { useEffect, useState } from 'react';
 import '../style.css';
 
 const images = [
-  {
-    src: '/Album/IMG_3115.jpg',
-    caption: 'Artistic Code Warrior',
-  },
-  {
-    src: '/Album/IMG_13_1_1.jpg',
-    caption: 'Yosemite Lake',
-  },
-  {
-    src: '/Album/IMG_13_1_3.jpg',
-    caption: 'Yosemite Lake',
-  },
-  {
-    src: '/Album/IMG_13_1_1.jpg',
-    caption: 'Serene Reflection',
-  },
-  {
-    src: '/Album/Yosemite_Lake.jpg',
-    caption: 'Still Waters',
-  },
-  {
-    src: '/Album/IMG_3119-Enhanced-NR.jpg',
-    caption: 'Bridge in Focus',
-  },
+  { src: '/Album/IMG_3115.jpg', caption: 'Artistic Code Warrior' },
+  { src: '/Album/IMG_13_1_1.jpg', caption: 'Yosemite Lake' },
+  { src: '/Album/IMG_13_1_3.jpg', caption: 'Yosemite Lake' },
+  { src: '/Album/IMG_13_1_1.jpg', caption: 'Serene Reflection' },
+  { src: '/Album/Yosemite_Lake.jpg', caption: 'Still Waters' },
+  { src: '/Album/IMG_3119-Enhanced-NR.jpg', caption: 'Bridge in Focus' },
 ];
 
 export default function Gallery() {
@@ -37,7 +19,7 @@ export default function Gallery() {
     if (background) {
       background.style.opacity = 0;
       setTimeout(() => {
-        background.style.backgroundImage = `url('${images[index].src}')`; // ✅ fixed backticks
+        background.style.backgroundImage = `url('${images[index].src}')`;
         background.style.opacity = 1;
       }, 300);
     }
@@ -71,7 +53,6 @@ export default function Gallery() {
 
   return (
     <>
-      <Navbar />
       <div className="background-blur" id="background-blur"></div>
       <div className="gallery-wrapper">
         <div className="sidebar">
@@ -84,6 +65,7 @@ export default function Gallery() {
             <li>🖼️ Artistic</li>
           </ul>
         </div>
+
         <div className="slideshow-layout">
           <div className="image-window">
             {images.map((img, i) => (
@@ -91,15 +73,18 @@ export default function Gallery() {
                 key={img.src}
                 src={img.src}
                 alt={img.caption}
-                className={i === index && fadeIn ? 'active' : ''}
+                className={i === index && fadeIn ? 'active' : 'inactive'}
                 onError={() => console.error(`❌ Failed to load: ${img.src}`)}
               />
             ))}
+            <div className="caption">{images[index].caption}</div>
           </div>
-          <div className="caption">{images[index].caption}</div>
-          <div className="nav-buttons">
-            <button onClick={prevImage}>◀ Prev</button>
-            <button onClick={nextImage}>Next ▶</button>
+
+          <div className="controls">
+            <div className="nav-buttons">
+              <button onClick={prevImage}>◀ Prev</button>
+              <button onClick={nextImage}>Next ▶</button>
+            </div>
           </div>
         </div>
       </div>

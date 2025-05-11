@@ -6,7 +6,7 @@ body, html {
   font-family: Arial, sans-serif;
   color: white;
   overflow-x: hidden;
-  overflow-y: auto; /* ✅ Allow scroll on mobile */
+  overflow-y: auto;
 }
 
 /* Navbar */
@@ -72,9 +72,9 @@ nav a {
   width: 100%;
   max-width: 720px;
   aspect-ratio: 16 / 9;
-  overflow: hidden;
   background: transparent;
   border-radius: 12px;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -90,44 +90,44 @@ nav a {
   transition: opacity 1s ease-in-out;
   border-radius: 12px;
   pointer-events: none;
+  z-index: 1;
 }
 
 .image-window img.active {
   opacity: 1;
-  z-index: 2;
   pointer-events: auto;
 }
 
-.image-window img.inactive {
-  opacity: 0;
-  z-index: 0;
-}
-
-/* Caption inside image-window */
+/* Caption pinned to bottom inside image window */
 .caption {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 10px;
+  padding: 10px 15px;
   font-style: italic;
   font-size: 1rem;
   background: rgba(0, 0, 0, 0.6);
   border-radius: 0 0 12px 12px;
   text-align: center;
-  z-index: 3;
-  box-sizing: border-box;
   color: white;
+  z-index: 2;
+  box-sizing: border-box;
 }
 
-/* Nav buttons below image */
-.nav-buttons {
-  margin-top: 24px;
-  z-index: 5;
-  position: relative;
+/* ✅ Controls wrapper to push buttons below slideshow */
+.controls {
+  margin-top: 20px;
+  width: 100%;
   display: flex;
   justify-content: center;
+}
+
+/* Nav buttons */
+.nav-buttons {
+  display: flex;
   gap: 16px;
+  z-index: 3;
 }
 
 .nav-buttons button {
@@ -154,12 +154,12 @@ nav a {
   .image-window {
     aspect-ratio: auto;
     height: auto;
-    min-height: 300px; /* ✅ Fix for mobile image visibility */
+    min-height: 300px;
   }
 
   .image-window img {
     object-fit: contain;
-    position: relative; /* ✅ Cancel absolute positioning */
+    position: relative;
     inset: unset;
     width: 100%;
     height: auto;
