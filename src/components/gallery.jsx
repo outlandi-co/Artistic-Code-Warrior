@@ -24,7 +24,6 @@ export default function Gallery() {
 
   return (
     <>
-      {/* ✅ Navbar */}
       <nav>
         <a href="/">Home</a> | 
         <a href="/about">About</a> | 
