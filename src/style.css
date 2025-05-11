@@ -1,7 +1,7 @@
-body {
+body, html {
   margin: 0;
   padding: 0;
-  height: 100vh;
+  height: 100%;
   background: black;
   font-family: Arial, sans-serif;
   color: white;
@@ -28,7 +28,7 @@ nav a {
   background-size: cover;
   background-position: center;
   filter: blur(30px) brightness(0.5);
-  z-index: 0; /* ✅ FIXED */
+  z-index: -1; /* ✅ REVERTED to prevent mobile black screen */
   transition: background-image 0s, opacity 0.8s ease-in-out;
   opacity: 1;
 }
@@ -38,10 +38,10 @@ nav a {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 80px);
+  min-height: 100vh; /* ✅ Better for mobile than calc(100vh - 80px) */
   padding: 0 20px;
   position: relative;
-  z-index: 1; /* ✅ Already correct */
+  z-index: 1;
   overflow: hidden;
 }
 
