@@ -71,6 +71,7 @@ export default function Gallery() {
 
   return (
     <>
+      <Navbar />
       <div className="background-blur" id="background-blur"></div>
       <div className="gallery-wrapper">
         <div className="sidebar">
