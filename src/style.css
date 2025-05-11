@@ -5,7 +5,8 @@ body, html {
   background: black;
   font-family: Arial, sans-serif;
   color: white;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto; /* ✅ Allow scroll on mobile */
 }
 
 /* Navbar */
@@ -153,10 +154,15 @@ nav a {
   .image-window {
     aspect-ratio: auto;
     height: auto;
+    min-height: 300px; /* ✅ Fix for mobile image visibility */
   }
 
   .image-window img {
     object-fit: contain;
+    position: relative; /* ✅ Cancel absolute positioning */
+    inset: unset;
+    width: 100%;
+    height: auto;
   }
 
   .caption {
