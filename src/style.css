@@ -19,6 +19,7 @@ nav a {
   margin: 0 15px;
 }
 
+/* ✅ Blurred background behind slideshow */
 .background-blur {
   position: absolute;
   top: 0;
@@ -33,8 +34,7 @@ nav a {
   transition: background-image 0s, opacity 0.8s ease-in-out;
 }
 
-
-/* Layout wrapper */
+/* ✅ Layout wrapper above the background */
 .gallery-wrapper {
   position: relative;
   z-index: 1;
@@ -45,7 +45,6 @@ nav a {
   padding: 0 20px;
   overflow: hidden;
 }
-
 
 /* Slideshow layout */
 .slideshow-layout {
