@@ -24,12 +24,7 @@ export default function Gallery() {
 
   return (
     <>
-      <nav>
-        <a href="/">Home</a> | 
-        <a href="/about">About</a> | 
-        <a href="/gallery">Gallery</a> | 
-        <a href="/contact">Contact</a>
-      </nav>
+     
 
       <div className="gallery-wrapper">
         <h2 style={{ textAlign: 'center' }}>Mobile Image Slideshow</h2>
