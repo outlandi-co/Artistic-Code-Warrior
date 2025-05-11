@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import '../style.css';
-import Navbar from './Navbar.jsx';
 
 const images = [
   { src: '/Album/IMG_3115.jpg', caption: 'Artistic Code Warrior' },
