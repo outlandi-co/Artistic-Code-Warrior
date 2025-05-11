@@ -9,9 +9,12 @@ body, html {
 }
 
 nav {
+  position: relative;
+  z-index: 10; /* ⬅️ This brings the navbar above the background blur */
   text-align: center;
   margin: 20px 0;
 }
+
 
 nav a {
   color: #00cdd3;
@@ -111,16 +114,15 @@ nav a {
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 10px 12px;
+  padding: 10px;
   font-style: italic;
   font-size: 1rem;
   background: rgba(0, 0, 0, 0.6);
-  color: white;
+  border-radius: 0 0 12px 12px;
   text-align: center;
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
-  box-sizing: border-box;
   z-index: 3;
+  box-sizing: border-box;
+  color: white;
 }
 
 
@@ -132,23 +134,20 @@ nav a {
 }
 
 .nav-buttons button {
-  background-color: rgba(0, 205, 211, 0.66); /* 66% opaque background */
+  background-color: rgba(0, 205, 211, 0.6); /* teal with 60% opacity */
   color: black;
   border: none;
   font-weight: bold;
   padding: 10px 20px;
   margin: 0 8px;
-  border-radius: 12px; /* smoother corners */
+  border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  opacity: .90; /* ✅ correct decimal value for overall button opacity */
 }
 
 .nav-buttons button:hover {
-  background-color: rgba(0, 205, 211, 0.85); /* brighter background on hover */
-  opacity: 0.85; /* slightly more solid on hover */
+  background-color: rgba(0, 205, 211, 0.9); /* less transparent on hover */
 }
-
 
 
 /* Mobile layout */
@@ -165,8 +164,6 @@ nav a {
     height: auto;
     justify-content: center;
     align-items: center;
-    position: relative; /* ✅ Ensure caption stays positioned */
-    overflow: hidden;
   }
 
   .image-window img {
@@ -178,19 +175,7 @@ nav a {
   }
 
   .caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 60%;
-    padding: 8px;
     font-size: 0.9rem;
-    background: rgba(0, 0, 0, 0.6);
-    color: white;
-    text-align: center;
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;
-    box-sizing: border-box;
-    z-index: 3;
   }
 
   .slideshow-controls {

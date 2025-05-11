@@ -37,9 +37,8 @@ export default function Gallery() {
 
   return (
     <>
+      <div className="background-blur" id="background-blur"></div>
       <div className="gallery-wrapper">
-        <div className="background-blur" id="background-blur"></div>
-
         <div className="sidebar">
           <h3>Categories</h3>
           <ul className="category-list">
@@ -50,7 +49,6 @@ export default function Gallery() {
             <li>🖼️ Artistic</li>
           </ul>
         </div>
-
         <div className="slideshow-layout">
           <div className="image-window">
             {images.map((img, i) => (
@@ -61,9 +59,8 @@ export default function Gallery() {
                 className={i === index ? 'active' : 'inactive'}
               />
             ))}
-            <div className="caption">{images[index].caption}</div> {/* ⬅️ moved inside */}
           </div>
-
+          <div className="caption">{images[index].caption}</div>
           <div className="nav-buttons">
             <button onClick={prevImage}>◀ Prev</button>
             <button onClick={nextImage}>Next ▶</button>
