@@ -111,15 +111,16 @@ nav a {
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 10px;
+  padding: 10px 12px;
   font-style: italic;
   font-size: 1rem;
   background: rgba(0, 0, 0, 0.6);
-  border-radius: 0 0 12px 12px;
-  text-align: center;
-  z-index: 3;
-  box-sizing: border-box;
   color: white;
+  text-align: center;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  box-sizing: border-box;
+  z-index: 3;
 }
 
 
@@ -164,6 +165,8 @@ nav a {
     height: auto;
     justify-content: center;
     align-items: center;
+    position: relative; /* ✅ Ensure caption stays positioned */
+    overflow: hidden;
   }
 
   .image-window img {
@@ -175,7 +178,19 @@ nav a {
   }
 
   .caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 8px;
     font-size: 0.9rem;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    text-align: center;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    box-sizing: border-box;
+    z-index: 3;
   }
 
   .slideshow-controls {
