@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import '../style.css'; // Make sure this file is imported properly
 
 const images = [
   { src: '/Album/IMG_3115.jpg', caption: 'Artistic Code Warrior' },
@@ -11,72 +12,33 @@ const images = [
 export default function Gallery() {
   const [index, setIndex] = useState(0);
 
-  const nextImage = () => {
-    setIndex((prev) => (prev + 1) % images.length);
-  };
-
-  const prevImage = () => {
-    setIndex((prev) => (prev - 1 + images.length) % images.length);
-  };
+  const nextImage = () => setIndex((prev) => (prev + 1) % images.length);
+  const prevImage = () => setIndex((prev) => (prev - 1 + images.length) % images.length);
 
   return (
-    <div style={{ padding: 20, background: 'black', color: 'white', minHeight: '100vh' }}>
+    <div className="gallery-wrapper">
       <h2 style={{ textAlign: 'center' }}>Mobile Image Slideshow</h2>
 
-      <div style={{ textAlign: 'center', marginBottom: 10 }}>
-        <img
-          src={images[index].src}
-          alt={images[index].caption}
-          style={{
-            width: '100%',
-            maxWidth: 500,
-            borderRadius: 12,
-            border: '2px solid white',
-            display: 'block',
-            margin: '0 auto',
-          }}
-          onError={() => console.error(`❌ Failed to load: ${images[index].src}`)}
-        />
-        <div
-          style={{
-            background: 'rgba(0,0,0,0.6)',
-            padding: '8px 12px',
-            borderRadius: '0 0 12px 12px',
-            marginTop: -4,
-            fontStyle: 'italic',
-          }}
-        >
-          {images[index].caption}
+      <div className="slideshow-layout">
+        <div className="image-window">
+          {images.map((img, i) => (
+            <img
+              key={img.src}
+              src={img.src}
+              alt={img.caption}
+              className={i === index ? 'active' : 'inactive'}
+              onError={() => console.error(`❌ Failed to load: ${img.src}`)}
+            />
+          ))}
+          <div className="caption">{images[index].caption}</div>
         </div>
-      </div>
 
-      <div style={{ display: 'flex', justifyContent: 'center', gap: 20 }}>
-        <button
-          onClick={prevImage}
-          style={{
-            padding: '10px 20px',
-            backgroundColor: '#00cdd3',
-            color: 'black',
-            border: 'none',
-            borderRadius: 6,
-            fontWeight: 'bold',
-          }}
-        >
-          ◀ Prev
-        </button>
-        <button
-          onClick={nextImage}
-          style={{
-            padding: '10px 20px',
-            backgroundColor: '#00cdd3',
-            color: 'black',
-            border: 'none',
-            borderRadius: 6,
-            fontWeight: 'bold',
-          }}
-        >
-          Next ▶
-        </button>
+        <div className="controls">
+          <div className="nav-buttons">
+            <button onClick={prevImage}>◀ Prev</button>
+            <button onClick={nextImage}>Next ▶</button>
+          </div>
+        </div>
       </div>
     </div>
   );
