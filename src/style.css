@@ -84,14 +84,18 @@ nav a {
 .image-window {
   position: relative;
   width: 100%;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   background: transparent;
   border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .image-window img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
   opacity: 0;
   transition: opacity 1s ease-in-out;
@@ -103,7 +107,6 @@ nav a {
 
 .image-window img.active {
   opacity: 1;
-  position: relative;
   z-index: 2;
 }
 
@@ -154,8 +157,12 @@ nav a {
 
   .image-window {
     width: 100%;
+    aspect-ratio: auto;
     height: auto;
     background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .image-window img {
@@ -163,9 +170,13 @@ nav a {
     width: 100%;
     height: auto;
     object-fit: contain;
+    top: 0;
+    left: 0;
   }
 
   .caption {
     font-size: 0.9rem;
+    position: relative;
+    bottom: unset;
   }
 }
