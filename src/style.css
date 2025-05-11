@@ -52,7 +52,15 @@ nav a {
   width: 100%;
   text-align: center;
   position: relative;
-  z-index: 2; /* ✅ ensures slideshow sits above blurred background */
+  z-index: 2;
+}
+
+/* ✅ Wrapper to align caption & buttons with slideshow */
+.slideshow-controls {
+  max-width: 720px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
 }
 
 /* Sidebar hidden on mobile */
@@ -99,31 +107,48 @@ nav a {
 
 /* Caption */
 .caption {
-  margin-top: 12px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
   font-style: italic;
   font-size: 1rem;
   background: rgba(0, 0, 0, 0.6);
-  border-radius: 6px;
-  padding: 8px;
+  border-radius: 0 0 12px 12px;
+  text-align: center;
+  z-index: 3;
+  box-sizing: border-box;
+  color: white;
 }
+
 
 /* ✅ Navigation buttons */
 .nav-buttons {
   margin-top: 12px;
-  z-index: 3;
+  z-index: 5;
   position: relative;
 }
 
 .nav-buttons button {
-  background-color: rgba(0, 205, 211, 0.9); /* more visible on bright backgrounds */
+  background-color: rgba(0, 205, 211, 0.66); /* 66% opaque background */
   color: black;
   border: none;
   font-weight: bold;
   padding: 10px 20px;
   margin: 0 8px;
-  border-radius: 5px;
+  border-radius: 12px; /* smoother corners */
   cursor: pointer;
+  transition: background-color 0.3s ease;
+  opacity: .90; /* ✅ correct decimal value for overall button opacity */
 }
+
+.nav-buttons button:hover {
+  background-color: rgba(0, 205, 211, 0.85); /* brighter background on hover */
+  opacity: 0.85; /* slightly more solid on hover */
+}
+
+
 
 /* Mobile layout */
 @media (max-width: 900px) {
@@ -151,5 +176,9 @@ nav a {
 
   .caption {
     font-size: 0.9rem;
+  }
+
+  .slideshow-controls {
+    padding: 0 12px;
   }
 }
