@@ -25,11 +25,8 @@ nav a {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: linear-gradient(
-      rgba(0, 0, 0, 0.4),
-      rgba(0, 0, 0, 0.4)
-    ),
-    url('/Album/IMG_3115.jpg'); /* fallback image */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url('/Album/IMG_3115.jpg'); /* fallback for first render */
   background-size: cover;
   background-position: center;
   filter: blur(30px) brightness(0.5);

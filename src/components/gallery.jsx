@@ -12,18 +12,7 @@ const images = [
 
 export default function Gallery() {
   const [index, setIndex] = useState(0);
-  const [fadeIn, setFadeIn] = useState(true);
 
-  // Set initial background on mount
-  useEffect(() => {
-    const background = document.getElementById('background-blur');
-    if (background) {
-      background.style.backgroundImage = `url('${images[0].src}')`;
-      background.style.opacity = 1;
-    }
-  }, []);
-
-  // Update background on image index change
   useEffect(() => {
     const background = document.getElementById('background-blur');
     if (background) {
@@ -31,36 +20,20 @@ export default function Gallery() {
       setTimeout(() => {
         background.style.backgroundImage = `url('${images[index].src}')`;
         background.style.opacity = 1;
-        console.log('Background set to:', images[index].src);
+        console.log('✅ Background set to', images[index].src);
       }, 300);
     }
-
-    const interval = setInterval(() => {
-      setFadeIn(false);
-      setTimeout(() => {
-        setIndex((prev) => (prev + 1) % images.length);
-        setFadeIn(true);
-      }, 200);
-    }, 5000);
-
-    return () => clearInterval(interval);
   }, [index]);
 
-  const nextImage = () => {
-    setFadeIn(false);
-    setTimeout(() => {
+  useEffect(() => {
+    const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % images.length);
-      setFadeIn(true);
-    }, 200);
-  };
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
-  const prevImage = () => {
-    setFadeIn(false);
-    setTimeout(() => {
-      setIndex((prev) => (prev - 1 + images.length) % images.length);
-      setFadeIn(true);
-    }, 200);
-  };
+  const nextImage = () => setIndex((prev) => (prev + 1) % images.length);
+  const prevImage = () => setIndex((prev) => (prev - 1 + images.length) % images.length);
 
   return (
     <>
