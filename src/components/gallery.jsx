@@ -30,7 +30,7 @@ export default function Gallery() {
      
 
       <div className="gallery-wrapper">
-        <h2 style={{ textAlign: 'center' }}>Mobile Image Slideshow</h2>
+        <h2 style={{ textAlign: 'center' }}>Image Slideshow</h2>
 
         <div className="slideshow-layout">
           <div className="image-window">
