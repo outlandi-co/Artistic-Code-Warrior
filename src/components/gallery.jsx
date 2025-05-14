@@ -4,9 +4,9 @@ import '../style.css';
 const images = [
   { src: '/Album/IMG_3115.jpg', caption: 'Artistic Code Warrior' },
     { src: '/Album/IMG_14_1_3.jpg', caption: 'Still Waters' },
-  { src: '/Album/IMG_13_1_1.jpg', caption: 'Yosemite Lake' },
+  { src: '/Album/IMG_13_1_1.jpg', caption: 'Lake' },
     { src: '/Album/IMG_14_1_2.jpg', caption: 'Still Waters' },
-  { src: '/Album/IMG_13_1_3.jpg', caption: 'Yosemite Lake' },
+  { src: '/Album/IMG_13_1_3.jpg', caption: 'Lake' },
   { src: '/Album/IMG_14_1_1.jpg', caption: 'Still Waters' },
   { src: '/Album/Yosemite_Lake.jpg', caption: 'Still Waters' },
   { src: '/Album/IMG_3119-Enhanced-NR.jpg', caption: 'Bridge in Focus' },
