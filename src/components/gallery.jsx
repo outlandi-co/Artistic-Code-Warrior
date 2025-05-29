@@ -2,15 +2,16 @@ import React, { useState, useEffect } from 'react';
 import '../style.css';
 
 const images = [
-  { src: '/Album/IMG_3115.jpg', caption: 'Artistic Code Warrior' },
-    { src: '/Album/IMG_14_1_3.jpg', caption: 'Still Waters' },
-  { src: '/Album/IMG_13_1_1.jpg', caption: 'Lake' },
-    { src: '/Album/IMG_14_1_2.jpg', caption: 'Still Waters' },
-  { src: '/Album/IMG_13_1_3.jpg', caption: 'Lake' },
-  { src: '/Album/IMG_14_1_1.jpg', caption: 'Still Waters' },
-  { src: '/Album/Yosemite_Lake.jpg', caption: 'Still Waters' },
-  { src: '/Album/IMG_3119-Enhanced-NR.jpg', caption: 'Bridge in Focus' },
+  { src: '/Album/Image-1.jpg', caption: 'Golden Horizon Over Tranquil Waters' },
+  { src: '/Album/Image-2.jpg', caption: 'Amber Sunset Mirror' },
+  { src: '/Album/Image-3.jpg', caption: 'Serene Forest Reflection' },
+  { src: '/Album/Image-4.jpg', caption: 'Golden Hillside Ripples' },
+  { src: '/Album/Image-5.jpg', caption: 'Historic Lift Bridge Crossing' },
+  { src: '/Album/Image-6.jpg', caption: 'Sunlight Through the Canopy' },
+  { src: '/Album/Image-7.jpg', caption: 'Verdant Waters with Reflection' },
+  { src: '/Album/Image-8.jpg', caption: 'Winding Stream Through the Grove' },
 ];
+
 
 export default function Gallery() {
   const [index, setIndex] = useState(0);
