@@ -10,6 +10,12 @@ const images = [
   { src: '/Album/Image-6.jpg', caption: 'Sunlight Through the Canopy' },
   { src: '/Album/Image-7.jpg', caption: 'Verdant Waters with Reflection' },
   { src: '/Album/Image-8.jpg', caption: 'Winding Stream Through the Grove' },
+  { src: '/Album/Image-9.jpg', caption: 'Winding Stream Through the Grove' },
+  { src: '/Album/Image-10.jpg', caption: 'Winding Stream Through the Grove' },
+  { src: '/Album/Image-11.jpg', caption: 'Winding Stream Through the Grove' },
+  { src: '/Album/Image-12.jpg', caption: 'Winding Stream Through the Grove' },
+  { src: '/Album/Image-13.jpg', caption: 'Winding Stream Through the Grove' },
+  { src: '/Album/Image-14.jpg', caption: 'Winding Stream Through the Grove' },
 ];
 
 
