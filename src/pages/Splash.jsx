@@ -1,49 +1,35 @@
-import React, { useRef } from 'react';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import '../style.css';
 
 export default function Splash() {
-  const videoRef = useRef(null);
+  const navigate = useNavigate();
 
-  const enableAudio = () => {
-    const video = videoRef.current;
-    if (video) {
-      video.muted = false;
-      video.volume = 1.0;
-      video.currentTime = 0; // Optional: restart video with sound
-      video.play();
-    }
-  };
+  // Optional: Auto-redirect after 5 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      navigate('/home');
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, [navigate]);
 
   return (
     <div className="splash-container">
+      {/* Splash Video (Logo Animation) */}
       <video
-        ref={videoRef}
+        className="splash-logo"
         autoPlay
         muted
         playsInline
-        loop
-        style={{ width: '100vw', height: '100vh', objectFit: 'cover' }}
       >
-        <source src="/videos/intro.mp4" type="video/mp4" />
+        <source src="/video/intro_.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
-      <button
-        onClick={enableAudio}
-        style={{
-          position: 'absolute',
-          bottom: '40px',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          padding: '10px 20px',
-          fontSize: '16px',
-          backgroundColor: '#13a2b5',
-          color: '#fff',
-          border: 'none',
-          cursor: 'pointer',
-          borderRadius: '6px',
-        }}
-      >
-        🔊 Enable Sound
+      {/* Manual Entry Button */}
+      <button onClick={() => navigate('/home')} className="enter-button">
+        Enter Site
       </button>
     </div>
   );
