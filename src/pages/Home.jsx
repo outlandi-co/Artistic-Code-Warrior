@@ -11,24 +11,10 @@ export default function Home() {
         Your browser does not support the video tag.
       </video>
 
+      {/* ✅ No Navbar here – handled globally in App.jsx */}
+
       {/* Hero Section */}
       <div className="hero-content">
-        {/* Clickable animated logo */}
-        <Link to="/gallery">
-          <video
-            className="hero-logo"
-            autoPlay
-            loop
-            muted
-            playsInline
-            width="200"
-            style={{ cursor: 'pointer' }}
-          >
-            <source src="/video/logo-spin.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </Link>
-
         <h1>Welcome to Artistic Code Warrior</h1>
         <p>
           Explore a blend of design, photography, and creative technology.
