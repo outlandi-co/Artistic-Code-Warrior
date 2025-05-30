@@ -38,12 +38,14 @@ a:visited {
 .gallery-wrapper {
   min-height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;     /* ⬆️ Align content to the top */
   align-items: center;
-  padding: 20px;
+  padding-top: 80px;               /* ⬆️ Create intentional spacing from top */
+  padding-bottom: 40px;
   flex-direction: column;
   background: black;
 }
+
 
 /* Slideshow layout container */
 .slideshow-layout {
