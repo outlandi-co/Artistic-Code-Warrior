@@ -241,3 +241,36 @@ a:visited {
   color: white;
   background: transparent;
 }
+
+form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+form button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #00ffff;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #0ff;
+}
