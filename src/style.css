@@ -180,3 +180,64 @@ a:visited {
     min-width: 100px;
   }
 }
+
+/* Splash full screen layout */
+.splash-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 999;
+}
+
+/* Fullscreen video as background */
+.splash-logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Enter Site button */
+.enter-button {
+  position: relative;
+  z-index: 2;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border: none;
+  background-color: #00ffff;
+  color: #000;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.enter-button:hover {
+  background-color: #0ff;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* vertically center */
+  align-items: center;      /* horizontally center */
+  text-align: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  color: white;
+  background: transparent;
+}

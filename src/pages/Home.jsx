@@ -5,14 +5,6 @@ import '../style.css';
 export default function Home() {
   return (
     <div>
-      {/* Fullscreen background video */}
-      <video className="video-bg" autoPlay muted loop playsInline>
-        <source src="/video/intro.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-
-      {/* ✅ No Navbar here – handled globally in App.jsx */}
-
       {/* Hero Section */}
       <div className="hero-content">
         <h1>Welcome to Artistic Code Warrior</h1>
